@@ -1,0 +1,12 @@
+-- Pant Purchase
+
+local pants = script.Parent
+local ID = 7566406751
+
+local Click = Instance.new("ClickDetector", pants) -- create a click detector instance
+
+Click.MouseClick:Connect(function(playerWhoClicked) -- when pant part is click on, run function
+	local MarketplaceService = game.MarketplaceService -- gets functions from marketplace service
+	MarketplaceService:PromptPurchase(playerWhoClicked,ID) -- prompt the player to purchase the item
+
+end)
