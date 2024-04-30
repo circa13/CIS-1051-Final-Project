@@ -1,0 +1,21 @@
+-- create leaderstats
+
+game.Players.PlayerAdded:Connect(function(player)
+	local leaderstats = Instance.new("Folder")
+	leaderstats.Parent = player
+	leaderstats.Name = "leaderstats"
+-- creates rank in leaderstats
+	local rank = Instance.new("StringValue")
+	rank.Parent = leaderstats
+	rank.Name = "Rank"
+	rank.Value = ""
+	
+	if player:GetRankInGroup(7793362) == 0 then
+		rank.Value = "Guest"
+	elseif player:GetRankInGroup(7793362) == 255 then
+		rank.Value = "Creator"
+	else
+		rank.Value = "Member"
+	end
+	
+end)
