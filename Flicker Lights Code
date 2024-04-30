@@ -1,0 +1,11 @@
+-- Flicker Lights Code
+
+local part = script.Parent
+
+while true do
+	local rand = math.random(1,10)
+	part.Material = Enum.Material.Plastic
+	wait(.3)
+	part.Material = Enum.Material.Neon
+	wait(rand)
+end
