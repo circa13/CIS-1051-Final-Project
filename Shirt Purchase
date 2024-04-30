@@ -1,0 +1,12 @@
+-- Shirt Purchase
+
+local shirt = script.Parent -- parent part of script
+local ID = 7114790695 -- item ID from roblox for shirt
+
+local Click = Instance.new("ClickDetector", shirt) -- create a click detector instance
+
+Click.MouseClick:Connect(function(playerWhoClicked) -- when shirt part is click on, run function
+	local MarketplaceService = game.MarketplaceService -- gets functions from marketplace service
+	MarketplaceService:PromptPurchase(playerWhoClicked,ID) -- prompt the player to purchase the item
+	
+end)
