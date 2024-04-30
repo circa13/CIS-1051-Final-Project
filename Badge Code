@@ -1,0 +1,11 @@
+-- Badge Code
+
+local ID = 1596792592981729
+local badgeService = game:GetService("BadgeService")
+
+script.Parent.Touched:Connect(function(otherPart)
+	if otherPart.Parent:FindFirstChild("Humanoid") then
+		local player = game.Players:GetPlayerFromCharacter(otherPart.Parent)
+		badgeService:AwardBadge(player.UserId, ID)
+	end
+end)
