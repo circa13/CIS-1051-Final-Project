@@ -1,0 +1,10 @@
+-- Shirt Try On
+
+local ID = script.Parent.Parent.Parent.Shirt.ShirtTemplate
+
+script.Parent.Triggered:Connect(function(player)
+	if player.Character:FindFirstChild("Pants") then
+		local char = player.Character
+		char.Shirt.ShirtTemplate = ID
+	end
+end)
